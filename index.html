@@ -1,0 +1,55 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>100 Novutekos dijeron</title>
+    <link rel="stylesheet" href="libs/animate.css" />
+    <link rel="stylesheet" href="css/play.css">
+  </head>
+  <body ng-app="juegoApp">
+
+    <div id="container" ng-controller="JuegoCtrl">
+
+      <div class="marcador">
+        <div class="puntaje-team-1" ng-class="{ active: turnoTeam == 1 }">{{ puntosTeam1 }}</div>
+        <div class="puntaje-en-juego">{{ puntosPregunta }}</div>
+        <div class="puntaje-team-2" ng-class="{ active: turnoTeam == 2 }">{{ puntosTeam2 }}</div>
+      </div>
+
+      <div class="tablero">    
+
+        <center>       
+          <table class="respuestas">
+            <tr ng-repeat="respuesta in preguntaActual.respuestas">        
+              <td>
+                <span ng-show="respuesta.opened" class="animated flipInX">{{ ($index + 1) + '. ' + respuesta.nombre }}</span>
+                <span ng-show="!respuesta.opened">{{ ($index + 1) + '. ' }} __________________________________</span>
+              </td>
+              <td style="width: 50px;">
+                <span ng-show="respuesta.opened">{{ respuesta.numero }}</span>
+                <span ng-show="!respuesta.opened">___</span>
+              </td>          
+            </tr>
+          </table>
+        </center>
+
+      </div>
+
+      <div class="strike" ng-show="strikeActive && !robo">
+        <span ng-show="strikeCount == 1">X</span>
+        <span ng-show="strikeCount == 2">XX</span>
+        <span ng-show="strikeCount == 3">XXX</span>
+      </div>
+      
+      <div class="strike" ng-show="strikeActive && robo">
+        <span>X</span>
+      </div>
+      
+      
+    </div>
+
+    <script src="libs/angular.min.js"></script>
+    <script src="scripts/datos.js"></script>
+    <script src="scripts/play.js"></script>
+  </body>
+</html>

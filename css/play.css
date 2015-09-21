@@ -1,0 +1,105 @@
+@font-face {font-family:"digital display tfb";src:url("fonts/digital_display_tfb.eot?") format("eot"),url("fonts/digital_display_tfb.woff") format("woff"),url("fonts/digital_display_tfb.ttf") format("truetype"),url("fonts/digital_display_tfb.svg#digitaldisplaytfb") format("svg");font-weight:normal;font-style:normal;}
+
+body{
+  font-family: sans-serif;
+}
+
+.tablero{
+  
+  position: absolute;
+  width: 800px;
+  height: 350px;
+  top: 200px;
+  left: calc(50% - 400px);
+  background: #000;
+  padding: 40px 20px 20px 20px;
+  border: 10px solid #B19D07;
+}
+
+.tablero .respuestas{
+  margin-top: 15px;
+  width: 740px;
+  border: 0;
+  color: #F8DC04;
+  text-transform: uppercase;
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.tablero .respuestas tr td{
+  padding-bottom: 18px;
+}
+
+.tablero .respuestas tr td:nth-child(1){
+  text-align: left;
+}
+
+.tablero .respuestas tr td:nth-child(2){
+  text-align: right;
+}
+
+.marcador{
+  padding-left: calc(50% - 400px);
+  font-family: 'digital display tfb';
+  color: #F8DC04;  
+  text-align: center;
+}
+
+.marcador .puntaje-team-1{
+  padding: 10px 20px;
+  width: 190px;
+  height: 100px;
+  background: #000;
+  float: left;
+  margin-right: 60px;
+  margin-top: 25px;
+  font-size: 90px;
+}
+
+.marcador .puntaje-en-juego{
+  padding: 20px;
+  width: 210px;
+  height: 120px;
+  background: #000;
+  float: left;  
+  border: 10px dotted #B19D07;
+  font-size: 120px;
+}
+
+.marcador .puntaje-team-2{
+  padding: 10px 20px;
+  width: 190px;
+  height: 100px;
+  background: #000;
+  float: left;
+  margin-left: 60px;
+  margin-top: 25px;
+  font-size: 90px;
+}
+
+.marcador .puntaje-team-1.active,
+.marcador .puntaje-team-2.active{
+  border: 5px solid green;
+}
+
+.strike{
+  position: absolute;
+  text-align: center;
+  color: red;
+  font-size: 150px;
+  top: 300px;
+  width: 100%;
+  height: 150px;
+  text-shadow: 0px 0px 7px #fff;
+}
+
+.control{
+  padding: 5px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  width: 100px;
+  background: gray;
+  margin-bottom: 7px;
+}

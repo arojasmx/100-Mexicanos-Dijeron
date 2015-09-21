@@ -1,0 +1,58 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>100 Novutekos dijeron</title>
+    <link rel="stylesheet" href="libs/animate.css" />
+    <link rel="stylesheet" href="css/play.css">
+  </head>
+  <body ng-app="juegoApp" ng-controller="ControlJuegoCtrl">
+
+    <div class="controles">
+      
+      <h2>Sonidos</h2>
+
+      <div><a href="#" class="control" ng-click="sendInicio()">Inicio juego</a></div>    
+
+      <h2>Rondas</h2>
+
+      <table>
+        <tr>
+          <td><a href="#" class="control" ng-click="sendPrevRonda()">Anterior</a></td>
+          <td><a href="#" class="control">{{ rondaActualIndex + 1 }}</a></td> 
+          <td><a href="#" class="control" ng-click="sendNextRonda()">Siguiente</a></td>        
+        </tr>
+      </table>
+      
+      <hr>
+
+      <h1>Preguntas</h1>
+
+      <table style="margin-bottom: 10px;">
+        <tr>
+          <td><a href="#" class="control" ng-click="sendPrevPregunta()">Anterior</a></td>
+          <td><a href="#" class="control">{{ preguntaActualIndex + 1 }}</a></td>
+          <td><a href="#" class="control" ng-click="sendNextPregunta()">Siguiente</a></td>        
+        </tr>
+      </table>   
+      
+      <table style="margin-bottom: 10px;">
+        <tr>
+          <td><a href="#" class="control" ng-click="sendTurnoTeam(1)">Turno equipo 1</a></td>
+          <td><a href="#" class="control" ng-click="sendTurnoTeam(2)">Turno equipo 2</a></td>        
+        </tr>
+      </table>  
+
+      <div><a href="#" class="control" ng-click="sendStrike()" style="background">Strike</a></div> 
+      
+      <h4>{{ preguntaActual.nombre }}</h4>
+      
+      <div ng-repeat="respuesta in preguntaActual.respuestas" style="height: 25px;margin-bottom: 7px; "><a href="#" class="control" ng-click="sendOpenRespuesta($index)">{{ respuesta.nombre}}</a></div>
+
+    </div>
+
+    <script src="libs/angular.min.js"></script>
+    <script src="scripts/datos.js"></script>
+    <script src="scripts/controles.js"></script>
+  </body>
+</html>
